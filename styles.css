@@ -1,0 +1,17 @@
+/* Original Art Deco-inspired details; respect Obsidian theme variables. */
+.deja-two-narrative { width: 100%; min-height: 8rem; }
+.deja-two-timeline-row {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 0.65rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.deja-two-timeline-row button {
+  color: var(--text-normal);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  text-align: left;
+}
+.deja-two-timeline-row button:hover { color: var(--interactive-accent); }

@@ -1,17 +1,39 @@
-/* Original Art Deco-inspired details; respect Obsidian theme variables. */
-.deja-two-narrative { width: 100%; min-height: 8rem; }
-.deja-two-timeline-row {
-  border-bottom: 1px solid var(--background-modifier-border);
-  padding: 0.65rem 0;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+/* Original CSS-only Art Deco details; inherit the user's Obsidian theme. */
+.deja-two-capture h2, .deja-two-timeline h2 {
+  border-bottom: 3px double var(--background-modifier-border);
+  padding-bottom: 0.6rem;
+  letter-spacing: 0.035em;
 }
-.deja-two-timeline-row button {
+.deja-two-capture .setting-item { flex-wrap: wrap; gap: 0.6rem; }
+.deja-two-capture .setting-item-control { min-width: 0; max-width: 100%; }
+.deja-two-capture input, .deja-two-capture select { max-width: 100%; min-height: 44px; }
+.deja-two-narrative { width: 100%; min-height: 8rem; resize: vertical; }
+.deja-two-status { color: var(--text-muted); }
+.deja-two-timeline-row { border-bottom: 1px solid var(--background-modifier-border); padding: 0.4rem 0; }
+.deja-two-timeline .deja-two-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  width: 100%;
+  height: auto;
+  min-height: 44px;
+  padding: 0.7rem;
   color: var(--text-normal);
   background: transparent;
   border: 0;
   box-shadow: none;
   text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  user-select: text;
 }
-.deja-two-timeline-row button:hover { color: var(--interactive-accent); }
+.deja-two-entry time { color: var(--text-muted); font-size: var(--font-small); }
+.deja-two-timeline .deja-two-entry:hover { background: var(--background-secondary); }
+.deja-two-entry:focus-visible, .deja-two-unreadable:focus-visible { outline: 2px solid var(--interactive-accent); outline-offset: 2px; }
+.deja-two-unreadable { display: block; max-width: 100%; height: auto; min-height: 44px; white-space: normal; overflow-wrap: anywhere; margin-bottom: 0.5rem; }
+@media (max-width: 600px) {
+  .deja-two-capture .setting-item { align-items: stretch; flex-direction: column; }
+  .deja-two-capture .setting-item-control { width: 100%; justify-content: flex-start; }
+  .deja-two-capture .setting-item-control input, .deja-two-capture .setting-item-control select { width: 100%; }
+}

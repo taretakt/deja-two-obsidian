@@ -82,7 +82,7 @@ This procedure reproduces the package contents from the lockfile; archive timest
 
 ## Verification and remaining runtime checks
 
-Verified in the Linux development environment: `npm install`, TypeScript checks against the installed Obsidian API, browser-targeted production build, and 49 passing Vitest tests. Tests cover serialization, timestamps, normalization, filename safety, IDs, and simulated vault writes/read failures/concurrency. Test-only Obsidian stand-ins parse the writer's scalar subset; they do not exercise Obsidian's actual YAML parser or UI.
+Verified in the Linux development environment: `npm install`, TypeScript checks against the installed Obsidian API, browser-targeted bundle build, 50 unit tests, and a runtime smoke test (`npm run test:smoke`) that loads the built `main.js` against a mocked Obsidian API and exercises capture, save, timeline rendering, and unreadable/duplicate handling with real YAML validation.ed production build, and 49 passing Vitest tests. Tests cover serialization, timestamps, normalization, filename safety, IDs, and simulated vault writes/read failures/concurrency. Test-only Obsidian stand-ins parse the writer's scalar subset; they do not exercise Obsidian's actual YAML parser or UI.
 
 A source and bundle audit found only browser/Web Crypto and Obsidian APIs in plugin code: no Node/Electron imports or network calls. Node APIs in build/test tooling are not bundled into the plugin. `npm install` reported three development dependency advisories (one moderate, two critical) in the Vitest toolchain. Requested dependency versions were preserved; no runtime dependencies were added.
 

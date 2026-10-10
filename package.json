@@ -7,12 +7,15 @@
     "dev": "node esbuild.config.mjs",
     "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
     "typecheck": "tsc -noEmit -skipLibCheck",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:smoke": "npm run build && node tests/smoke.cjs"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.0.0",
     "builtin-modules": "^4.0.0",
     "esbuild": "^0.25.0",
+    "js-yaml": "^5.4.3",
     "obsidian": "latest",
     "typescript": "^5.8.0",
     "vitest": "^3.2.7"
